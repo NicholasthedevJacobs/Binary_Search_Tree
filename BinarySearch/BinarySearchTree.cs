@@ -21,22 +21,38 @@ namespace BinarySearch
             {
                 RootNode = nodeToAdd;
             }
-            else if(nodeToAdd.data > RootNode.data) 
-            {
-                LastNode.NextNode = nodeToAdd.RightNode;
-                
-            }
             else
             {
-                LastNode.NextNode = nodeToAdd.LeftNode;
+                Node currentNode = RootNode;
+                while (true)
+                {
+
+                }
             }
+
         }
         public void Search(Node nodeToSearch)
         {
-            if(nodeToSearch.data > RootNode.data)
+            Node currentNode = RootNode;
+            //bool goLeft = true;
+            while (true)
             {
-                RootNode.NextNode
-            }
+                if (nodeToSearch.data > currentNode.data)
+                {
+                    currentNode = currentNode.RightNode;
+
+                }
+                else if (nodeToSearch.data < currentNode.data)
+                {
+                    currentNode = currentNode.LeftNode;
+                    //goLeft = true;                
+                }
+                else
+                {
+                    nodeToSearch = currentNode;
+                    break;
+                }
+            }                     
         }
     }
 }
