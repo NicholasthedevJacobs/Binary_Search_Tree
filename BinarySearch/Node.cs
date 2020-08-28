@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace BinarySearch
 {
-    class BinarySearchTree
+    class Node
     {
         //member variables
-        public Node RootNode;
+        public int data;
 
         //constructor
+        public Node(int data)
+        {
+            this.data = data;
+        }
 
         //member methods
+
 
     }
 }
