@@ -10,6 +10,9 @@ namespace BinarySearch
     {
         //member variables
         public int data;
+        public Node NextNode;
+        public Node LeftNode;
+        public Node RightNode;
 
         //constructor
         public Node(int data)
