@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,12 +27,24 @@ namespace BinarySearch
                 Node currentNode = RootNode;
                 while (true)
                 {
-
+                    if(nodeToAdd.data > currentNode.data)
+                    {
+                        currentNode = currentNode.RightNode;
+                    }
+                    else if(nodeToAdd.data < currentNode.data)
+                    {
+                        currentNode = currentNode.LeftNode;
+                    }
+                    else
+                    {
+                        currentNode = null;
+                        currentNode = nodeToAdd;
+                    }
                 }
             }
 
         }
-        public void Search(Node nodeToSearch)
+        public bool Search(Node nodeToSearch)
         {
             Node currentNode = RootNode;
             //bool goLeft = true;
@@ -50,7 +63,8 @@ namespace BinarySearch
                 else
                 {
                     nodeToSearch = currentNode;
-                    break;
+                    return true;
+                   
                 }
             }                     
         }
